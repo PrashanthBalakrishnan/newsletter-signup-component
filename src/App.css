@@ -1,0 +1,158 @@
+@font-face {
+  font-family: "Roboto bold";
+  font-display: swap;
+  font-weight: 700;
+  src: url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  font-weight: 400;
+  src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+:root {
+  /* Neutral */
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: Grey: hsl(231, 7%, 60%);
+  --clr-neutral-300: hsl(235, 18%, 26%);
+  --clr-neutral-400:hsl(234, 29%, 20%);
+  /* Primary */
+  --clr-primary-400:hsl(4, 100%, 67%);
+
+  /* Font Family */
+  --ff-primary: "Roboto", sans-serif;
+  --ff-bold: "Roboto bold", sans-serif;
+  
+  /* Font Weight */
+  --fw-regular:400;
+  --fw-bold:700;
+
+  /* Font Size */
+  --fs-regular:1rem;
+}
+
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,svg{
+  display: block;
+  max-width: 100%;
+}
+
+body{
+  font-family:var(--ff-primary);
+  font-size: var(--fs-regular);
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-neutral-400);
+}
+
+@media (min-width:600px) {
+  body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+}
+
+picture img{
+  width: 100vw;
+}
+
+.component{
+  max-width: 60rem;
+  background-color: var(--clr-neutral-100);
+}
+
+@media (min-width:600px) {
+ .component{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ }
+
+ .mainImage{
+  order:2
+ }
+
+  picture img{
+    width: 100%;
+    margin-bottom: 2.8rem;
+  }
+}
+
+.form{
+  padding:35px 25px;
+  display: flex;
+  flex-direction: column;
+  gap:25px;
+  height: 100vh;
+}
+
+.form__title{
+  font-size: 1.875rem;
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-bold);
+}
+
+.form__info__item{
+  display: flex;
+  align-items: start;
+  gap:10px;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+.form__labelContainer{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: .675rem;
+  font-family: var(--ff-bold);
+
+}
+
+.form__label{
+  font-weight: var(--fw-bold);
+  font-size: .675rem;
+}
+.form__error{
+  color:red;
+}
+
+
+.form__input{
+  width: 100%;
+  padding: 20px 25px;
+  border-radius: 10px;
+  border: 1px solid rgb(199, 197, 197);
+  margin-bottom:25px ;
+}
+
+.form__input[data-error] input{
+  background-color: red;
+}
+
+.btn {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-100);
+  padding: 1rem 4rem;
+  width: 100%;
+  font-size: .875rem;
+  font-family: var(--ff-bold);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to right, #ff5476 20%, #ff683d 50%);
+  box-shadow: #ff5476 0px 10px 36px 0px, #ff683d 0px 0px 0px 1px;
+}
