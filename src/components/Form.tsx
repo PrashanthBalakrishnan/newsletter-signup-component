@@ -71,13 +71,12 @@ const Form = () => {
                     "form__input",
                     errors["emailAddress"] && "input_error"
                   )}
-                  type="email"
                   placeholder="email@company.com"
                   {...register("emailAddress", {
                     required: "Valid email required",
                     pattern: {
                       value: /\S+@\S+\.\S+/,
-                      message: "Entered value does not match email format",
+                      message: "Valid email required",
                     },
                   })}
                 />
